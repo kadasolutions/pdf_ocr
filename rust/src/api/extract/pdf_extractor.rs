@@ -8,7 +8,7 @@ pub fn extract_pdf(path: String) -> Result<String> {
     println!("{:?}", env::current_dir());
     let pdfium = Pdfium::new(
         Pdfium::bind_to_library(Pdfium::pdfium_platform_library_name_at_path(
-            ".\\packages\\pdf_ocr\\redist\\pdfium",
+            ".\\packages\\pdf_ocr\\redist\\pdfium", 
         ))
         .or_else(|_| Pdfium::bind_to_system_library())?,
     );

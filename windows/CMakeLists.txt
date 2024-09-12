@@ -18,3 +18,52 @@ set(pdf_ocr_bundled_libraries
   "${${PROJECT_NAME}_cargokit_lib}"
   PARENT_SCOPE
 )
+
+# This value is used when generating builds using this plugin, so it must
+# not be changed
+set(PLUGIN_NAME "pdf_ocr_sdk_plugin")
+
+set(SOURCE_DLL "${CMAKE_CURRENT_SOURCE_DIR}/include/pdfium.dll")
+set(BUILD_FOLDER "${CMAKE_BINARY_DIR}/runner/${CMAKE_BUILD_TYPE}")
+
+# Source dll is located correctly, but still don't know the ENV type
+#install(FILES "${SOURCE_DLL}" DESTINATION "${BUILD_FOLDER}"
+#  COMPONENT Runtime)
+
+
+link_directories("${PROJECT_SOURCE_DIR}/include/") 
+
+apply_standard_settings(${PLUGIN_NAME})
+set_target_properties(${PLUGIN_NAME} PROPERTIES
+  CXX_VISIBILITY_PRESET hidden)
+target_compile_definitions(${PLUGIN_NAME} PRIVATE FLUTTER_PLUGIN_IMPL)
+
+
+# Define the plugin library target. Its name must not be changed (see comment
+# on PLUGIN_NAME above).
+add_library(${PLUGIN_NAME} SHARED
+  "pdfium.dll"
+  ${PLUGIN_SOURCES}
+)
+
+apply_standard_settings(${PLUGIN_NAME})
+# Source include directories and library dependencies. Add any plugin-specific
+# dependencies here.
+target_include_directories(${PLUGIN_NAME} INTERFACE
+"${CMAKE_CURRENT_SOURCE_DIR}/include")
+target_link_libraries(${PLUGIN_NAME} PRIVATE flutter flutter_wrapper_plugin "pdfium.dll")
+
+
+
+message(STATUS "PLUGIN_SOURCES: ${PLUGIN_SOURCES}")
+message(STATUS "PROJECT_SOURCE_DIR: ${PROJECT_SOURCE_DIR}")
+message(STATUS "CMAKE_CURRENT_SOURCE_DIR: ${CMAKE_CURRENT_SOURCE_DIR}/include")
+
+
+# List of absolute paths to libraries that should be bundled with the plugin.
+# This list could contain prebuilt libraries, or libraries created by an
+# external build triggered from this build file.
+set(pdf_ocr_bundled_libraries
+  "${PROJECT_SOURCE_DIR}/include"
+  PARENT_SCOPE
+)

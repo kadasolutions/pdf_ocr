@@ -32,11 +32,6 @@ class _HomeState extends State<Home> {
 
                 final content = await PdfOcrClient()
                     .extractPdfText(result.files.single.path!);
-                print('\n');
-                print('______DEBUG______');
-                print('content: ' + content.toString());
-                print('END_______DEBUG_______END');
-                print('\n');
                 setState(() {
                   _content = content;
                 });
