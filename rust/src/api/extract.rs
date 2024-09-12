@@ -13,7 +13,6 @@ pub struct Extractor {}
 impl Extractor {
     #[flutter_rust_bridge::frb(dart_async)]
     pub async fn extract(path: String) -> Option<String> {
-        println!("extracccccct ");
         let out = match infer::get_from_path(&path) {
             Ok(Some(file_type)) => match file_type.mime_type() {
                 "application/vnd.openxmlformats-officedocument.wordprocessingml.document" => {
@@ -30,7 +29,7 @@ impl Extractor {
                 _ => Err(anyhow!("Unsupported file type")),
             },
         };
-println!("out {:?}", out);
+
         match out {
             Ok(out) => {
                 return Some(out);
