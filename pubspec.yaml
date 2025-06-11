@@ -1,11 +1,11 @@
 name: pdf_ocr
 description: "OCR PDFs in Flutter using Rust."
-version: 0.0.1
+version: 0.0.2
 homepage: https://kadasolutions.ch/
 
 environment:
   sdk: ^3.5.0
-  flutter: '>=3.3.0'
+  flutter: ">=3.3.0"
 
 dependencies:
   flutter:
@@ -34,4 +34,3 @@ flutter:
         ffiPlugin: true
       windows:
         ffiPlugin: true
-
