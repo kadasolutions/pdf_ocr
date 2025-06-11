@@ -11,12 +11,9 @@ A Flutter/Dart plugin for extracting text from PDF files using native Rust-power
 - Simple API for integration into Flutter and Dart projects
 - Cross-platform support
 
-## Getting started
+## Usage
 
-### Prerequisites
-
-- Rust toolchain (for building native code)
-- Platform-specific build tools (see [flutter_rust_bridge](https://github.com/fzyzcjy/flutter_rust_bridge))
+Check out the example project.
 
 Add the dependency to your `pubspec.yaml`:
 
@@ -25,10 +22,6 @@ dependencies:
   pdf_ocr: ^<latest_version>
 ```
 
-## Usage
-
-Check out the example project.
-
 ```dart
 FilePickerResult? result = await FilePicker.platform.pickFiles();
 
@@ -36,3 +29,10 @@ final content = await PdfOcrClient().extractPdfText(
     result.files.single.path!,
 );
 ```
+
+## Development prerequisites
+
+To contribute to the development of this package, you will need to set up your development environment as follows:
+
+- Rust toolchain (for building native code)
+- Platform-specific build tools (see [flutter_rust_bridge](https://github.com/fzyzcjy/flutter_rust_bridge))
