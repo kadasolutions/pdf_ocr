@@ -1,3 +1,5 @@
+[![alt text](image.png)](https://www.kadasolutions.ch/)
+
 # pdf_ocr
 
 A Flutter/Dart plugin for extracting text from PDF files using native Rust-powered OCR for fast and accurate results. Ideal for applications that need to process and analyze PDF documents on mobile and desktop platforms.
