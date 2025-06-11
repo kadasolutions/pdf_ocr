@@ -30,8 +30,9 @@ class _HomeState extends State<Home> {
                   _content = 'Extracting text...';
                 });
 
-                final content = await PdfOcrClient()
-                    .extractPdfText(result.files.single.path!);
+                final content = await PdfOcrClient().extractPdfText(
+                  result.files.single.path!,
+                );
                 setState(() {
                   _content = content;
                 });

@@ -1,39 +1,36 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# pdf_ocr
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/tools/pub/writing-package-pages).
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/to/develop-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+A Flutter/Dart plugin for extracting text from PDF files using native Rust-powered OCR for fast and accurate results. Ideal for applications that need to process and analyze PDF documents on mobile and desktop platforms.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- Extracts text from PDF files using OCR (Optical Character Recognition)
+- Fast and efficient, powered by Rust native code
+- Simple API for integration into Flutter and Dart projects
+- Cross-platform support
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+### Prerequisites
+
+- Rust toolchain (for building native code)
+- Platform-specific build tools (see [flutter_rust_bridge](https://github.com/fzyzcjy/flutter_rust_bridge))
+
+Add the dependency to your `pubspec.yaml`:
+
+```yaml
+dependencies:
+  pdf_ocr: ^<latest_version>
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+Check out the example project.
 
 ```dart
-const like = 'sample';
+FilePickerResult? result = await FilePicker.platform.pickFiles();
+
+final content = await PdfOcrClient().extractPdfText(
+    result.files.single.path!,
+);
 ```
-
-## Additional information
-
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
