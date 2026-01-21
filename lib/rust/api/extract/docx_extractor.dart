@@ -8,9 +8,28 @@ import 'package:flutter_rust_bridge/flutter_rust_bridge_for_generated.dart';
 
 // These functions are ignored (category: IgnoreBecauseNotAllowedOwner): `get_text`, `get_text`
 
+/// Extracts text content from a DOCX (Microsoft Word) file.
+///
+/// This function reads a DOCX file from the specified [path] and extracts
+/// all text content including paragraphs and tables. The extracted text
+/// preserves the document structure with appropriate line breaks.
+///
+/// The [path] parameter should be a valid file system path to a DOCX file.
+///
+/// Returns the extracted text content as a [String].
+///
+/// Throws an exception if the file cannot be read or parsed.
 Future<String> extractDocx({required String path}) =>
     RustLib.instance.api.crateApiExtractDocxExtractorExtractDocx(path: path);
 
+/// An abstract interface for extracting text from document elements.
+///
+/// This interface provides a common method for extracting text content
+/// from various document child elements such as paragraphs and tables.
 abstract class GetText {
+  /// Extracts text content from a document element.
+  ///
+  /// Returns the extracted text as a [String], or `null` if the element
+  /// does not contain extractable text content.
   Future<String?> getText();
 }
