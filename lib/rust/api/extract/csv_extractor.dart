@@ -6,5 +6,16 @@
 import '../../frb_generated.dart';
 import 'package:flutter_rust_bridge/flutter_rust_bridge_for_generated.dart';
 
+/// Extracts text content from a CSV file.
+///
+/// This function reads a CSV file from the specified [path] and returns
+/// its content as a formatted string. The CSV data is parsed and converted
+/// to a readable text format.
+///
+/// The [path] parameter should be a valid file system path to a CSV file.
+///
+/// Returns the extracted CSV content as a [String].
+///
+/// Throws an exception if the file cannot be read or parsed.
 Future<String> extractCsv({required String path}) =>
     RustLib.instance.api.crateApiExtractCsvExtractorExtractCsv(path: path);

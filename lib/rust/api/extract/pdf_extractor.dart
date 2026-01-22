@@ -6,5 +6,16 @@
 import '../../frb_generated.dart';
 import 'package:flutter_rust_bridge/flutter_rust_bridge_for_generated.dart';
 
+/// Extracts text content from a PDF file using OCR (Optical Character Recognition).
+///
+/// This function processes a PDF file from the specified [path] and extracts
+/// all text content using OCR technology. It can handle both text-based PDFs
+/// and scanned/image-based PDFs by performing optical character recognition.
+///
+/// The [path] parameter should be a valid file system path to a PDF file.
+///
+/// Returns the extracted text content as a [String].
+///
+/// Throws an exception if the file cannot be read or processed.
 Future<String> extractPdf({required String path}) =>
     RustLib.instance.api.crateApiExtractPdfExtractorExtractPdf(path: path);

@@ -1,6 +1,6 @@
 name: pdf_ocr
-description: "OCR PDFs in Flutter using Rust."
-version: 1.0.0
+description: "A Flutter/Dart plugin for extracting text from PDF files using native Rust-powered OCR for fast and accurate results. Ideal for applications that need to process and analyze PDF documents on mobile and desktop platforms."
+version: 1.1.0
 homepage: https://kadasolutions.ch/
 repository: https://github.com/kadasolutions/pdf_ocr
 
@@ -11,14 +11,14 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_rust_bridge: ^2.3.0
-  plugin_platform_interface: ^2.0.2
+  flutter_rust_bridge: ^2.11.1
+  plugin_platform_interface: ^2.1.8
 
 dev_dependencies:
-  ffi: ^2.1.0
+  ffi: ^2.1.5
   flutter_test:
     sdk: flutter
-  flutter_lints: ^4.0.0
+  flutter_lints: ^6.0.0
   integration_test:
     sdk: flutter
 
