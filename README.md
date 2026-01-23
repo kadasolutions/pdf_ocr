@@ -36,3 +36,17 @@ To contribute to the development of this package, you will need to set up your d
 
 - Rust toolchain (for building native code)
 - Platform-specific build tools (see [flutter_rust_bridge](https://github.com/fzyzcjy/flutter_rust_bridge))
+
+## Modifying the package
+
+You need to install a matching version of flutter_rust_bridge_codegen, which is currently fixed to 2.11.1.
+The flutter dependency should follow the same version:
+
+```
+flutter_rust_bridge: 2.11.1
+```
+
+```
+cargo install flutter_rust_bridge_codegen --version 2.11.1
+flutter_rust_bridge_codegen generate
+```

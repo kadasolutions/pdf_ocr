@@ -9,6 +9,6 @@ crate-type = ["cdylib", "staticlib"]
 [dependencies]
 anyhow = "1.0.86"
 docx-rs = "0.4.17"
-flutter_rust_bridge = "=2.3.0"
+flutter_rust_bridge = "=2.11.1"
 infer = "0.16.0"
 pdfium-render = "0.8.24"
