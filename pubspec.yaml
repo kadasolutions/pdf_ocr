@@ -1,6 +1,6 @@
 name: pdf_ocr
 description: "A Flutter/Dart plugin for extracting text from PDF files using native Rust-powered OCR for fast and accurate results. Ideal for applications that need to process and analyze PDF documents on mobile and desktop platforms."
-version: 1.1.1
+version: 1.1.0
 homepage: https://kadasolutions.ch/
 repository: https://github.com/kadasolutions/pdf_ocr
 
