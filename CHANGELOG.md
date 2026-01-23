@@ -10,7 +10,7 @@
 
 - Add github repository
 
-## 1.1.1
+## 1.1.0
 
 - Add more documentation
 - Fix the flutter_rust_bridge version to 2.11.1
